@@ -6,6 +6,8 @@ This is a webpack loader that automatically bind [css-modules](https://github.co
 
 If you are using css-modules, or a similar approach to abstract class "names" and the real `className` values that are actually output to the DOM, you may want to use the [bind](https://github.com/JedWatson/classnames#alternate-bind-version-for-css-modules) variant of classnames module.
 
+Check out [this example](https://gist.github.com/itsmepetrov/7dbe519bb1332dd0f6c9) that shows the difference between `classNames`, `classNames/bind` and `classnames-loader`
+
 ### Installation
 
 ```
