@@ -25,6 +25,15 @@ To enable this loader add `classnames` before `style` loader in webpack config:
 }
 ```
 
+If you're using `ExtractTextPlugin` your webpack config should look like this:
+
+```js
+{
+  test: /\.css$/,
+  loaders: ['classnames', ExtractTextPlugin.extract('style', 'css')])
+}
+```
+
 Example usage in component:
 
 ```js
