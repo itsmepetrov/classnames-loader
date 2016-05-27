@@ -47,7 +47,7 @@ export default class SubmitButton extends Component {
       base: true,
       inProgress: this.props.store.submissionInProgress,
       error: this.props.store.errorOccurred,
-      disabled: this.props.form.valid,
+      disabled: !this.props.form.valid,
     });
     return <button className={className}>{text}</button>;
   } 
