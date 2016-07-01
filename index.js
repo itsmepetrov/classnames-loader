@@ -5,6 +5,7 @@ module.exports = function(source, map) {
 };
 
 module.exports.pitch = function(remainingRequest) {
+    this.cacheable();
     return `
         // classnames-loader: automatically bind css-modules to classnames
         var classNames = require(${loaderUtils.stringifyRequest(this, '!' + require.resolve('classnames/bind'))});
