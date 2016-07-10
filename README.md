@@ -54,6 +54,20 @@ export default class SubmitButton extends Component {
 }
 ```
 
+You can also access the class names just as you would do that with [css-modules](https://github.com/css-modules/css-modules):
+
+```js
+import { Component } from 'react';
+import styles from './submit-button.css';
+
+export default class SubmitButton extends Component {
+  render () {
+    let text = this.props.store.submissionInProgress ? 'Processing...' : 'Submit';
+    return <button className={styles.submitButton}>{text}</button>;
+  } 
+}
+```
+
 ## Thanks
 
 [@JedWatson](https://github.com/JedWatson) for [classnames](https://github.com/JedWatson/classnames) module
