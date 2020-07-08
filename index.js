@@ -8,8 +8,11 @@ module.exports.pitch = function(remainingRequest) {
     this.cacheable();
     return `
         // classnames-loader: automatically bind css-modules to classnames
+        function interopRequireDefault(obj) {
+            return obj && obj.__esModule ? obj : {default: obj};
+        }
         var classNames = require(${loaderUtils.stringifyRequest(this, '!' + require.resolve('classnames/bind'))});
-        var locals = require(${loaderUtils.stringifyRequest(this, '!!' + remainingRequest)});
+        var locals = interopRequireDefault(require(${loaderUtils.stringifyRequest(this, '!!' + remainingRequest)})).default;
         var css = classNames.bind(locals);
         for (var style in locals) {
             if (!locals.hasOwnProperty(style)) {
@@ -24,4 +27,4 @@ module.exports.pitch = function(remainingRequest) {
         }
         module.exports = css;
     `;
-}
+};
